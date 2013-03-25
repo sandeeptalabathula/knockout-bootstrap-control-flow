@@ -25,13 +25,25 @@
         <ul data-bind="foreach: notes">
             <li class="note" data-bind="css: { important: important }">
                 <a href="#" class="some_element" rel='popover' data-content="<ul><li><a>Option1</a></li><li>Option2</li><li>Option3</li><li>Option4</li></ul>"
-                    data-original-title="<strong><a href='#' data-bind='click: edit'>Edit Review</a></strong>" data-bind="click: edit"><span data-bind="text: text"></span></a>
+                    data-original-title="<strong><a href='#' data-bind='click: edit'>Edit Review</a></strong>" data-bind="click: edit">
+                    
+                    <span data-bind="text: text, tooltip: {title: text}">
+                    </span>
+                </a>
+
+                <br />Another: <a href="#" data-bind="text: text, popover: {template: 'popoverTemplate', title: 'Another PopOver',  trigger: 'hover'}"></a>
             </li>
         </ul>
 
         <div>
             <button class="btn" data-bind="click: addReview">Add Review</button>
         </div>
+
+    </script>
+
+    <script id="popoverTemplate" type="text/html">
+        <button class="close pull-right" type="button" data-dismiss="popover"></button>
+        Hey..! I am some content in another popover
     </script>
 
     <script id="AddReview" type="text/html">
