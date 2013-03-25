@@ -1,0 +1,13 @@
+﻿<h1>Experiment</h1>
+
+<ul data-bind="foreach: notes">
+    <li class="note" data-bind="css: { important: important }">
+        <span data-bind="text: text"></span>
+        <a href="#" class="some_element" rel='popover' data-content="<ul><li><a>Option1</a></li><li>Option2</li><li>Option3</li><li>Option4</li></ul>"
+data-original-title="<strong><a>Go to Main Option.</a></strong>" data-bind="click: edit">Edit</a>
+    </li>
+</ul>
+
+<div>
+    <button class="btn" data-bind="click: addReview">Add Review</button>
+</div>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiments</title>
+    <link href="css/App.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <script type="text/javascript" data-main="_start.js" src="lib/require.js"></script>
+</head>
+<body>
+    <div class="container" data-bind="template: 'App'">Loading...</div>
+
+    <script id="App" type="text/html">
+        <h1>Experiments on Modal Dialog, PopOver Menu, ToolTip and Language Toggler</h1>
+
+        <div class="btn-group " id="country-select">
+            <a class="btn" href="#">Select Language</a>
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">UK - English</a></li>
+                <li><a href="#">US - English</a></li>
+            </ul>
+        </div>
+
+        <ul data-bind="foreach: notes">
+            <li class="note" data-bind="css: { important: important }">
+                <a href="#" class="some_element" rel='popover' data-content="<ul><li><a>Option1</a></li><li>Option2</li><li>Option3</li><li>Option4</li></ul>"
+                    data-original-title="<strong><a href='#' data-bind='click: edit'>Edit Review</a></strong>" data-bind="click: edit"><span data-bind="text: text"></span></a>
+            </li>
+        </ul>
+
+        <div>
+            <button class="btn" data-bind="click: addReview">Add Review</button>
+        </div>
+    </script>
+
+    <script id="AddReview" type="text/html">
+        <div class="modal hide fade">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-bind="click: cancel">&times;</button>
+                <h3>Add Review</h3>
+            </div>
+            <div class="modal-body">
+                <form action="#" data-bind="submit: add">
+                    <div class="control-group">
+                        <label class="control-label">New Review:</label>
+                        <div class="controls">
+                            <textarea data-bind="value: text"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" data-bind="checked: important" />Important</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" data-bind="click: add">Add Review</a>
+                <a href="#" class="btn" data-bind="click: cancel">Cancel</a>
+            </div>
+        </div>
+    </script>
+    <!-- <script id="Script1" type="text/html">
+        <h1>Demo Application</h1>
+
+        <ul data-bind="foreach: notes">
+            <li class="note" data-bind="css: { important: important }">
+                <a href="#" data-bind="click: edit"><span data-bind="text: text"></span></a>
+            </li>
+        </ul>
+
+        <div>
+            <button class="btn" data-bind="click: addReview">Add Review</button>
+        </div>
+    </script>-->
+    <script id="EditReview" type="text/html">
+        <div class="modal hide fade">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-bind="click: cancel">&times;</button>
+                <h3>Edit Review</h3>
+            </div>
+            <div class="modal-body">
+                <form action="#" data-bind="submit: save">
+                    <div class="control-group">
+                        <label class="control-label">New Review:</label>
+                        <div class="controls">
+                            <textarea data-bind="value: text"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" data-bind="checked: important" />Important</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" data-bind="click: save">Save</a>
+                <a href="#" class="btn" data-bind="click: cancel">Cancel</a>
+            </div>
+        </div>
+    </script>
+
+
+    <!--    <script src="lib/jquery.js" type="text/javascript"></script>
+    <script src="lib/knockout.js" type="text/javascript"></script>
+    <script src="lib/knockout.mapping-latest.debug.js" type="text/javascript"></script>
+    <script src="lib/bootstrap.js" type="text/javascript"></script>
+
+    <script src="scripts/utils/namespace.js" type="text/javascript"></script>
+
+    <script src="scripts/utils/modal-dialog.js" type="text/javascript"></script>
+    <script src="scripts/utils/popover-menu.js" type="text/javascript"></script>
+    <script src="scripts/namespace.js" type="text/javascript"></script>
+    <script src="vms/EditReviewViewModel.js" type="text/javascript"></script>
+    <script src="vms/ReviewViewModel.js" type="text/javascript"></script>
+    <script src="vms/AddReviewViewModel.js" type="text/javascript"></script>
+    <script src="vms/AppViewModel.js" type="text/javascript"></script>
+
+    <script src="scripts/_start.js" type="text/javascript"></script>-->
+</body>
+</html>
